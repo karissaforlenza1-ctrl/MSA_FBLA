@@ -3,6 +3,29 @@
 	const mainNav = header?.querySelector('nav[aria-label="Main navigation"]');
 	if (!header || !mainNav) return;
 
+	const brandMark = header.querySelector('.brand-mark');
+	if (brandMark) {
+		let logo = brandMark.querySelector('.brand-logo');
+		if (!logo) {
+			logo = document.createElement('img');
+			logo.className = 'brand-logo';
+			brandMark.prepend(logo);
+		}
+		logo.src = 'fbla-logo-horizontal-color.png';
+		logo.alt = 'Future Business Leaders of America';
+		logo.hidden = false;
+		logo.addEventListener('error', () => {
+			logo.hidden = true;
+			let fallback = brandMark.querySelector('.brand-logo-fallback');
+			if (!fallback) {
+				fallback = document.createElement('span');
+				fallback.className = 'brand-logo-fallback';
+				fallback.textContent = 'MSA FBLA';
+				brandMark.prepend(fallback);
+			}
+		});
+	}
+
 	const links = [
 		['index.html', 'Home'],
 		['events.html', 'Events'],
@@ -73,6 +96,8 @@
 	`;
 	style.textContent += `
 		.brand-mark { min-width: 150px; }
+		.brand-logo { display: block !important; width: 220px !important; height: 58px !important; object-fit: contain; object-position: left center; }
+		.brand-logo-fallback { display: block; color: #1d3253; font-family: "Space Grotesk", sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -.04em; white-space: nowrap; }
 	`;
 	document.head.appendChild(style);
 
