@@ -67,9 +67,9 @@
 		}
 		nav {
 			display: flex;
-			gap: 24px;
+			gap: 16px;
 			align-items: center;
-			font-size: 12px;
+			font-size: 11px;
 			font-weight: 700;
 			letter-spacing: 0.14em;
 			text-transform: uppercase;
@@ -79,6 +79,8 @@
 			color: var(--navy);
 		}
 		nav a:hover { color: var(--red); }
+		.menu-toggle { display: none; padding: 10px 12px; border: 1px solid var(--line); background: #ffffff; color: var(--navy); font-size: 22px; line-height: 1; cursor: pointer; }
+		.mobile-menu { display: none; }
 
 		.hero {
 			position: relative;
@@ -499,6 +501,11 @@
 		@media (max-width: 860px) {
 			.site-header { padding: 16px 18px; }
 			nav { display: none; }
+			.menu-toggle { display: block; }
+			.mobile-menu { display: none; position: absolute; top: 82px; right: 18px; left: 18px; z-index: 5; padding: 10px; background: #ffffff; border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(17, 33, 58, 0.14); }
+			.mobile-menu.is-open { display: grid; gap: 2px; }
+			.mobile-menu a { padding: 13px 14px; color: var(--navy); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+			.mobile-menu a:hover { background: var(--sky); color: var(--red); }
 			.hero { padding: 70px 28px 60px; min-height: 440px; }
 			.intro-card { grid-template-columns: 1fr; transform: translateY(-14px); }
 			.feature-grid, .info-grid, .social-links { grid-template-columns: 1fr; }
@@ -513,7 +520,7 @@
 	<header class="site-header">
 		<a class="brand" href="index.html" aria-label="Manatee School for the Arts home">
 			<div class="brand-mark" aria-label="FBLA chapter badge">
-				<img class="brand-logo" src="assets/fbla-logo-horizontal-color.png" alt="Future Business Leaders of America">
+				<img class="brand-logo" src="fbla-logo-horizontal-color.png" alt="Future Business Leaders of America">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" width="60" height="54" style="margin-right: 18px; flex-shrink: 0;" aria-hidden="true">
 					<polygon points="10,80 42,10 32,80" fill="#213555" />
 					<polygon points="41,80 50,28 59,80" fill="#F4C430" />
@@ -531,6 +538,21 @@
 			<a href="mission.html">Mission</a>
 			<a href="events.html">Events</a>
 			<a href="conference.html">Conference</a>
+			<a href="competition.html">Competition</a>
+			<a href="rankings.html">Rankings</a>
+			<a href="officers.html">Officers</a>
+			<a href="gallery.html">Gallery</a>
+			<a href="coordinator.html">Coordinator</a>
+			<a href="sponsor.html">Sponsor</a>
+			<a href="social.html">Social</a>
+		</nav>
+		<button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">☰</button>
+		<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+			<a href="index.html">Home</a>
+			<a href="mission.html">Mission</a>
+			<a href="events.html">Events</a>
+			<a href="conference.html">Conference</a>
+			<a href="competition.html">Competition</a>
 			<a href="rankings.html">Rankings</a>
 			<a href="officers.html">Officers</a>
 			<a href="gallery.html">Gallery</a>
@@ -621,34 +643,21 @@
 			</div>
 		</section>
 
-		<section class="section" id="rankings">
-			<p class="section-kicker">Competition dates</p>
-			<div class="section-heading">
-				<h2>Upcoming competition dates.</h2>
-				<p>The next competition starts in December. Here are the official FBLA competitive event pages.</p>
-			</div>
-			<div class="competition-panel">
-				<span class="mini-label">Official FBLA Events</span>
-				<h3>Next competition starts in December.</h3>
-				<div class="competition-links">
-					<div class="competition-link-box">
-						<div class="link-title">For highschoolers</div>
-						<a href="https://fbla.org/high-school/competitive-events/" target="_blank" rel="noopener">fbla.org/high-school/competitive-events/</a>
-					</div>
-					<div class="competition-link-box">
-						<div class="link-title">For middle school</div>
-						<a href="https://fbla.org/middle-school/competitive-events/" target="_blank" rel="noopener">fbla.org/middle-school/competitive-events/</a>
-					</div>
-				</div>
-			</div>
-
-		</section>
 	</main>
 
 	<footer>
 		<span>Manatee School for the Arts · FBLA</span>
 		<span>Palmetto, Florida</span>
 	</footer>
+	<script>
+		const menuToggle = document.getElementById('menu-toggle');
+		const mobileMenu = document.getElementById('mobile-menu');
+		menuToggle.addEventListener('click', function () {
+			const isOpen = mobileMenu.classList.toggle('is-open');
+			menuToggle.setAttribute('aria-expanded', String(isOpen));
+			menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+		});
+	</script>
 </body>
 </html>
 
