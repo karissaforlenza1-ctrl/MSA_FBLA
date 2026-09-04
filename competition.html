@@ -102,14 +102,6 @@
 		<div class="note">Competition dates and event details can change. Check the official FBLA pages for the latest information before preparing or registering.</div>
 	</main>
 	<footer><span>Manatee School for the Arts · FBLA</span><span>Palmetto, Florida</span></footer>
-	<script>
-		const menuToggle = document.getElementById('menu-toggle');
-		const mobileMenu = document.getElementById('mobile-menu');
-		menuToggle.addEventListener('click', function () {
-			const isOpen = mobileMenu.classList.toggle('is-open');
-			menuToggle.setAttribute('aria-expanded', String(isOpen));
-			menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-		});
-	</script>
+	<script src="site-nav.js"></script>
 </body>
 </html>
