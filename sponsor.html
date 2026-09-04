@@ -255,6 +255,42 @@
 			color: var(--muted);
 			line-height: 1.7;
 		}
+		.payment-modal {
+			display: none;
+			position: fixed;
+			inset: 0;
+			z-index: 10;
+			place-items: center;
+			padding: 24px;
+			background: rgba(16, 33, 58, 0.62);
+		}
+		.payment-modal.is-open { display: grid; }
+		.payment-modal-content {
+			position: relative;
+			max-width: 460px;
+			padding: 34px 30px 30px;
+			background: var(--white);
+			border-top: 6px solid var(--gold);
+			box-shadow: 0 18px 50px rgba(16, 33, 58, 0.24);
+			text-align: center;
+		}
+		.payment-modal-content h2 {
+			margin: 0 0 12px;
+			font-family: "Space Grotesk", sans-serif;
+			color: var(--navy);
+		}
+		.payment-modal-content p { margin: 0; color: var(--muted); line-height: 1.6; }
+		.payment-modal-close {
+			position: absolute;
+			top: 10px;
+			right: 14px;
+			border: 0;
+			background: transparent;
+			color: var(--muted);
+			font-size: 24px;
+			line-height: 1;
+			cursor: pointer;
+		}
 		footer {
 			display: flex;
 			justify-content: space-between;
@@ -359,7 +395,7 @@
 		<section class="donation-box" aria-label="General donations">
 			<h2>Donate any amount</h2>
 			<p>Donations of any amount are welcome. Please make checks payable to MSA FBLA.</p>
-			<a class="button" href="https://www.paypal.com/donate" target="_blank" rel="noopener">Donate through PayPal</a>
+			<button class="button" id="payment-button" type="button">Donate through PayPal</button>
 		</section>
 
 		<section class="card-grid">
@@ -393,22 +429,38 @@
 		</section>
 
 	</main>
+	<div class="payment-modal" id="payment-modal" role="dialog" aria-modal="true" aria-labelledby="payment-modal-title">
+		<div class="payment-modal-content">
+			<button class="payment-modal-close" id="payment-modal-close" type="button" aria-label="Close message">&times;</button>
+			<h2 id="payment-modal-title">Online payments coming soon</h2>
+			<p>Sorry, we are currently setting up online payments. Check back later!</p>
+		</div>
+	</div>
 	<footer>
 		<span>Manatee School for the Arts · FBLA</span>
 		<span>Palmetto, Florida</span>
 	</footer>
 	<script>
+		const paymentModal = document.getElementById('payment-modal');
+		const paymentModalClose = document.getElementById('payment-modal-close');
+		const showPaymentNotice = function () {
+			paymentModal.classList.add('is-open');
+		};
+		const closePaymentNotice = function () {
+			paymentModal.classList.remove('is-open');
+		};
+
+		document.getElementById('payment-button').addEventListener('click', showPaymentNotice);
+		paymentModalClose.addEventListener('click', closePaymentNotice);
+		paymentModal.addEventListener('click', function (event) {
+			if (event.target === paymentModal) closePaymentNotice();
+		});
+
 		const sponsorForm = document.getElementById('sponsor-form');
 		if (sponsorForm) {
 			sponsorForm.addEventListener('submit', function (event) {
 				event.preventDefault();
-				const selectedAmount = sponsorForm.querySelector('input[name="amount"]:checked');
-				const presetValue = selectedAmount ? Number(selectedAmount.value) : 25;
-				const url = new URL('https://www.paypal.com/donate');
-					url.searchParams.set('amount', String(presetValue));
-				url.searchParams.set('currency_code', 'USD');
-					url.searchParams.set('item_name', 'MSA FBLA sponsorship');
-				window.open(url.toString(), '_blank', 'noopener,noreferrer');
+				showPaymentNotice();
 			});
 		}
 	</script>
