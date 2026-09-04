@@ -264,6 +264,9 @@
 		}
 		.thank-you-panel h2 { margin: 0 0 12px; font-family: "Space Grotesk", sans-serif; font-size: clamp(2rem, 4vw, 3rem); line-height: .96; }
 		.thank-you-panel p { max-width: 760px; margin: 0; color: rgba(255,255,255,.84); line-height: 1.7; }
+		.sponsor-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+		.sponsor-list div { padding: 15px 16px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); color: var(--white); font-weight: 700; }
+		.sponsor-list span { display: block; margin-top: 4px; color: var(--gold-soft); font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
 		.payment-modal {
 			display: none;
 			position: fixed;
@@ -440,6 +443,12 @@
 		<section class="thank-you-panel" aria-label="Sponsor appreciation">
 			<h2>Thank you to our sponsors.</h2>
 			<p>Your support helps MSA FBLA students compete, lead, serve, and grow. We are grateful to every business, family, and community partner investing in the future of our chapter.</p>
+			<div class="sponsor-list" aria-label="Sponsor list">
+				<div>Sponsor name<span>Add sponsor here</span></div>
+				<div>Sponsor name<span>Add sponsor here</span></div>
+				<div>Sponsor name<span>Add sponsor here</span></div>
+				<div>Sponsor name<span>Add sponsor here</span></div>
+			</div>
 		</section>
 
 	</main>

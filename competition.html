@@ -43,6 +43,12 @@
 		.event-link::after { content: "→"; color: var(--red); font-size: 1.2rem; }
 		.event-link:hover { background: #fff4c9; }
 		.note { margin-top: 18px; padding: 20px 22px; border-left: 5px solid var(--gold); background: #fff9e6; color: var(--muted); line-height: 1.7; }
+		.schedule { display: grid; gap: 12px; margin-top: 22px; }
+		.schedule-item { display: grid; grid-template-columns: 190px 1fr; gap: 20px; align-items: center; padding: 18px 20px; background: var(--white); border: 1px solid var(--line); border-left: 5px solid var(--gold); box-shadow: 0 8px 20px rgba(20,43,76,.04); }
+		.schedule-date { color: var(--navy); font-family: "Space Grotesk", sans-serif; font-weight: 700; }
+		.schedule-title { color: var(--ink); font-weight: 700; }
+		.schedule-location { display: block; margin-top: 4px; color: var(--muted); font-size: .95rem; }
+		@media (max-width: 700px) { .schedule-item { grid-template-columns: 1fr; gap: 6px; } }
 		footer { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 24px 28px 36px; color: #647176; font-size: 12px; }
 		@media (max-width: 1200px) {
 			.site-header { padding: 16px 18px; }
@@ -98,6 +104,17 @@
 				<div><div class="event-label">For middle school</div><h3>Middle school events</h3><p>Explore competitive events designed for middle school members and growing business leaders.</p></div>
 				<a class="event-link" href="https://fbla.org/middle-school/competitive-events/" target="_blank" rel="noopener">View middle school events</a>
 			</article>
+		</section>
+		<div class="section-intro">
+			<h2>Chapter competition schedule.</h2>
+			<p>Important district deadlines, service events, and performance competitions for the chapter.</p>
+		</div>
+		<section class="schedule" aria-label="MSA FBLA competition schedule">
+			<div class="schedule-item"><div class="schedule-date">December 7-22, 2026</div><div class="schedule-title">District competition window<span class="schedule-location">FBLA competitive events</span></div></div>
+			<div class="schedule-item"><div class="schedule-date">December 15, 2026</div><div class="schedule-title">District FBLA projects due</div></div>
+			<div class="schedule-item"><div class="schedule-date">December 19, 2026</div><div class="schedule-title">Wreaths Across America<span class="schedule-location">Sarasota National Cemetery</span></div></div>
+			<div class="schedule-item"><div class="schedule-date">January 9, 2027</div><div class="schedule-title">District performance competitions<span class="schedule-location">LWRH</span></div></div>
+			<div class="schedule-item"><div class="schedule-date">January 15, 2027</div><div class="schedule-title">District FBLA awards ceremony<span class="schedule-location">LWRH</span></div></div>
 		</section>
 		<div class="note">Competition dates and event details can change. Check the official FBLA pages for the latest information before preparing or registering.</div>
 	</main>
