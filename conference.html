@@ -14,32 +14,37 @@
 			--ink: #1d2a39;
 			--muted: #586877;
 			--sky: #edf6ff;
+			--line: #dfeaf8;
+			--red: #d9472f;
 		}
 		* { box-sizing: border-box; }
 		.brand-mark svg, .brand-mark > div { display: none !important; }
 		.brand-logo { display: block; width: 220px; height: 58px; object-fit: contain; object-position: left center; }
-		body { margin: 0; background: var(--white); color: var(--ink); font-family: "Segoe UI", Arial, sans-serif; }
+		body { margin: 0; background: #f7f9fc; color: var(--ink); font-family: "DM Sans", sans-serif; }
 		a { color: inherit; }
-		.site-header { display: flex; align-items: center; justify-content: space-between; max-width: 1240px; margin: 0 auto; padding: 26px 32px 18px; }
+		.site-header { display: flex; align-items: center; justify-content: space-between; max-width: 1240px; margin: 0 auto; padding: 18px 32px; background: rgba(255,255,255,.96); box-shadow: 0 2px 0 rgba(17,33,58,.05); }
 		.brand { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
 		.brand-mark { display: inline-flex; align-items: center; background: linear-gradient(180deg, #ffffff 0%, #f9f6f0 100%); border: 2px solid var(--navy); border-radius: 12px; padding: 16px 22px 14px 18px; box-shadow: 0 8px 18px rgba(17, 33, 58, 0.08); max-width: 500px; }
-		nav { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; font-weight: 700; }
+		nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12px; font-weight: 700; }
 		nav a { text-decoration: none; color: var(--navy); letter-spacing: .04em; }
 		main { max-width: 1240px; margin: 0 auto; padding: 18px 18px 60px; }
-		.page-hero { padding: 50px 48px; margin: 20px 0 28px; background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 42%, #22466a 100%); border-radius: 26px; color: var(--white); }
-		.page-hero h1 { margin: 0 0 12px; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1; }
+		.page-hero { padding: 44px 48px; margin: 24px 0 30px; background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 42%, #22466a 100%); color: var(--white); }
+		.eyebrow { margin-bottom: 14px; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+		.page-hero h1 { margin: 0 0 12px; font-family: "Space Grotesk", sans-serif; font-size: clamp(2.6rem, 6vw, 5rem); line-height: .94; letter-spacing: -.06em; }
 		.page-hero p { margin: 0; max-width: 700px; font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.83); }
 		.card { background: var(--sky); border: 1px solid #dfeaf8; border-radius: 22px; padding: 32px 28px; box-shadow: 0 10px 26px rgba(20, 43, 76, 0.05); }
 		.card h2 { margin: 0 0 16px; font-size: 2rem; }
 		.card p { margin: 0; color: var(--muted); line-height: 1.8; }
-		.conference-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; }
-		.conference-card { background: var(--sky); border: 1px solid #dfeaf8; border-top: 6px solid var(--gold); padding: 32px 28px; box-shadow: 0 10px 26px rgba(20,43,76,.05); }
+		.conference-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; padding: 22px; background: var(--white); border: 1px solid var(--line); border-left: 6px solid var(--gold); box-shadow: 0 10px 26px rgba(20,43,76,.05); }
+		.conference-layout + .conference-layout { margin-top: 18px; border-left-color: var(--navy); }
+		.conference-card { padding: 10px 8px 10px 6px; }
 		.conference-card h2 { margin: 0 0 18px; color: var(--navy); font-family: "Space Grotesk", sans-serif; font-size: 2.1rem; }
 		.conference-card p { margin: 0; color: var(--muted); line-height: 1.8; }
-		.conference-meta { display: grid; gap: 12px; }
-		.meta-item { padding: 20px; background: var(--navy); color: var(--white); }
+		.conference-meta { display: grid; gap: 10px; align-content: center; }
+		.meta-item { padding: 17px 18px; background: var(--sky); color: var(--navy); border: 1px solid var(--line); }
 		.meta-item strong { display: block; margin-bottom: 8px; color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
 		.meta-item span { font-family: "Space Grotesk", sans-serif; font-size: 1.15rem; line-height: 1.3; }
+		.meta-item + .meta-item strong { color: var(--red); }
 		@media (max-width: 700px) { .conference-layout { grid-template-columns: 1fr; } }
 		footer { display: flex; justify-content: space-between; max-width: 1240px; margin: 0 auto; padding: 24px 32px 36px; color: #647176; font-size: 12px; }
 		@media (max-width: 700px) { .site-header { padding: 18px 20px; } nav { display: none; } .page-hero { padding: 32px 22px; } footer { display: block; padding: 20px 24px; } }
