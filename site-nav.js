@@ -17,7 +17,6 @@
 		['sponsor.html', 'Sponsor'],
 		['social.html', 'Social']
 	];
-	const primaryLinks = new Set(['index.html', 'events.html', 'conference.html', 'contact.html']);
 
 	const createLink = ([href, label]) => {
 		const link = document.createElement('a');
@@ -28,7 +27,7 @@
 
 	mainNav.className = 'primary-nav';
 	mainNav.innerHTML = '';
-	links.filter(([href]) => primaryLinks.has(href)).forEach((link) => mainNav.appendChild(createLink(link)));
+	links.forEach((link) => mainNav.appendChild(createLink(link)));
 
 	let mobileNav = header.querySelector('.mobile-menu');
 	if (!mobileNav) {
@@ -39,7 +38,7 @@
 	mobileNav.id = 'mobile-menu';
 	mobileNav.setAttribute('aria-label', 'More navigation');
 	mobileNav.innerHTML = '';
-	links.filter(([href]) => !primaryLinks.has(href)).forEach((link) => mobileNav.appendChild(createLink(link)));
+	links.forEach((link) => mobileNav.appendChild(createLink(link)));
 
 	let menuToggle = header.querySelector('.menu-toggle');
 	if (!menuToggle) {
@@ -57,24 +56,22 @@
 	const style = document.createElement('style');
 	style.textContent = `
 		.site-header { position: relative; }
-		.primary-nav { display: flex !important; gap: 18px !important; align-items: center; }
+		.primary-nav { display: flex !important; flex: 1; flex-wrap: wrap; justify-content: flex-end; gap: 10px 14px !important; align-items: center; }
 		.primary-nav a { white-space: nowrap; }
-		.menu-toggle { display: block; padding: 9px 12px; border: 1px solid rgba(29,50,83,.14); background: #fff; color: #1d3253; font-size: 21px; line-height: 1; cursor: pointer; }
+		.menu-toggle { display: none !important; padding: 9px 12px; border: 1px solid rgba(29,50,83,.14); background: #fff; color: #1d3253; font-size: 21px; line-height: 1; cursor: pointer; }
 		.mobile-menu { display: none; position: absolute; top: calc(100% + 8px); right: 18px; z-index: 20; min-width: 220px; padding: 8px; background: #fff; border: 1px solid rgba(29,50,83,.14); box-shadow: 0 14px 30px rgba(17,33,58,.16); }
 		.mobile-menu.is-open { display: grid; gap: 2px; }
 		.mobile-menu a { padding: 12px 14px; color: #1d3253; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
 		.mobile-menu a:hover { background: #edf6ff; color: #d9472f; }
 		@media (max-width: 700px) {
 			.site-header { padding: 12px 14px !important; }
-			.brand-wordmark { font-size: 16px !important; }
-			.primary-nav { gap: 8px !important; flex: 1; justify-content: flex-end; }
-			.primary-nav a { font-size: 10px; letter-spacing: .02em; }
-			.menu-toggle { padding: 8px 10px; margin-left: 8px; }
+			.primary-nav { display: none !important; }
+			.menu-toggle { display: block !important; padding: 8px 10px; margin-left: 8px; }
+			.brand-logo { width: 170px !important; height: 50px !important; object-fit: contain; }
 			.mobile-menu { right: 14px; left: 14px; min-width: 0; }
 		}
 	`;
 	style.textContent += `
-		.brand-wordmark { display: block; color: #1d3253; font-family: "Space Grotesk", sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -.04em; white-space: nowrap; }
 		.brand-mark { min-width: 150px; }
 	`;
 	document.head.appendChild(style);
