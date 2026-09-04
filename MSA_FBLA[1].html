@@ -187,8 +187,10 @@
 		}
 		.profile {
 			display: flex;
-			align-items: center;
+			flex-direction: column;
+			align-items: flex-start;
 			justify-content: center;
+			padding: 28px;
 			min-height: 220px;
 			background: linear-gradient(135deg, #f6f9ff 0%, #e4f0ff 100%);
 			border-radius: 18px;
@@ -200,6 +202,8 @@
 			height: 100%;
 			object-fit: cover;
 		}
+		.profile h3 { margin: 0 0 12px; color: var(--navy); font-size: 2rem; }
+		.profile p { margin: 0; color: var(--muted); line-height: 1.7; }
 
 		.feature-grid {
 			display: grid;
@@ -557,6 +561,8 @@
 				<p>At Manatee School for the Arts FBLA, we believe in helping students grow through business education, leadership, and community impact. We are committed to building confident young leaders who are ready to make a difference.</p>
 			</div>
 			<div class="profile" style="min-height: 220px; background: linear-gradient(135deg, #eaf4ff 0%, #edf5ff 100%); border: 1px solid #dfeaf8;">
+				<h3>Why FBLA?</h3>
+				<p>FBLA is for students who want to discover their strengths, build confidence, and prepare for the future. You will gain real-world business skills, meet new people, serve your community, and find opportunities to compete, lead, and grow.</p>
 			</div>
 		</section>
 
