@@ -32,6 +32,15 @@
 		.card { background: var(--sky); border: 1px solid #dfeaf8; border-radius: 22px; padding: 32px 28px; box-shadow: 0 10px 26px rgba(20, 43, 76, 0.05); }
 		.card h2 { margin: 0 0 16px; font-size: 2rem; }
 		.card p { margin: 0; color: var(--muted); line-height: 1.8; }
+		.conference-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; }
+		.conference-card { background: var(--sky); border: 1px solid #dfeaf8; border-top: 6px solid var(--gold); padding: 32px 28px; box-shadow: 0 10px 26px rgba(20,43,76,.05); }
+		.conference-card h2 { margin: 0 0 18px; color: var(--navy); font-family: "Space Grotesk", sans-serif; font-size: 2.1rem; }
+		.conference-card p { margin: 0; color: var(--muted); line-height: 1.8; }
+		.conference-meta { display: grid; gap: 12px; }
+		.meta-item { padding: 20px; background: var(--navy); color: var(--white); }
+		.meta-item strong { display: block; margin-bottom: 8px; color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+		.meta-item span { font-family: "Space Grotesk", sans-serif; font-size: 1.15rem; line-height: 1.3; }
+		@media (max-width: 700px) { .conference-layout { grid-template-columns: 1fr; } }
 		footer { display: flex; justify-content: space-between; max-width: 1240px; margin: 0 auto; padding: 24px 32px 36px; color: #647176; font-size: 12px; }
 		@media (max-width: 700px) { .site-header { padding: 18px 20px; } nav { display: none; } .page-hero { padding: 32px 22px; } footer { display: block; padding: 20px 24px; } }
 	</style>
@@ -40,7 +49,7 @@
 	<header class="site-header">
 		<a class="brand" href="index.html" aria-label="Go home">
 			<div class="brand-mark" aria-label="FBLA chapter badge">
-				<img class="brand-logo" src="Assets/IMG_0818.jpeg" alt="MSA FBLA chapter logo">
+				<span class="brand-wordmark">MSA FBLA</span>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" width="60" height="54" style="margin-right: 20px; flex-shrink: 0;" aria-hidden="true">
 					<polygon points="10,80 42,10 32,80" fill="#213555" />
 					<polygon points="41,80 50,28 59,80" fill="#F4C430" />
@@ -65,12 +74,19 @@
 	</header>
 	<main>
 		<section class="page-hero">
+			<div class="eyebrow">Leadership and competition</div>
 			<h1>Next conference.</h1>
 			<p>The next conference is the FL FBLA Fall Leadership Conference.</p>
 		</section>
-		<section class="card">
-			<h2>FL FBLA Fall Leadership Conference</h2>
-			<p><strong>Date:</strong> 11/13-11/15<br><strong>Location:</strong> Radisson Resort at Port 8701 Astronaut Blvd, Cape Canaveral, FL</p>
+		<section class="conference-layout">
+			<div class="conference-card">
+				<h2>FL FBLA Fall Leadership Conference</h2>
+				<p>Connect with FBLA members from across Florida, build leadership skills, and represent MSA with confidence.</p>
+			</div>
+			<div class="conference-meta">
+				<div class="meta-item"><strong>Date</strong><span>November 13-15</span></div>
+				<div class="meta-item"><strong>Location</strong><span>Radisson Resort at Port Canaveral</span></div>
+			</div>
 		</section>
 	</main>
 	<footer>

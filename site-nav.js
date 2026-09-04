@@ -5,18 +5,19 @@
 
 	const links = [
 		['index.html', 'Home'],
-		['mission.html', 'Mission'],
-		['sponsor.html', 'Sponsor'],
-		['social.html', 'Social'],
 		['events.html', 'Events'],
 		['conference.html', 'Conference'],
+		['contact.html', 'Find us'],
+		['mission.html', 'Mission'],
 		['competition.html', 'Competition'],
 		['rankings.html', 'Rankings'],
 		['officers.html', 'Officers'],
 		['gallery.html', 'Gallery'],
-		['coordinator.html', 'Coordinator']
+		['coordinator.html', 'Coordinator'],
+		['sponsor.html', 'Sponsor'],
+		['social.html', 'Social']
 	];
-	const primaryLinks = new Set(['index.html', 'mission.html', 'sponsor.html', 'social.html']);
+	const primaryLinks = new Set(['index.html', 'events.html', 'conference.html', 'contact.html']);
 
 	const createLink = ([href, label]) => {
 		const link = document.createElement('a');
@@ -65,12 +66,16 @@
 		.mobile-menu a:hover { background: #edf6ff; color: #d9472f; }
 		@media (max-width: 700px) {
 			.site-header { padding: 12px 14px !important; }
-			.brand-logo { width: 86px !important; height: 58px !important; }
+			.brand-wordmark { font-size: 16px !important; }
 			.primary-nav { gap: 8px !important; flex: 1; justify-content: flex-end; }
 			.primary-nav a { font-size: 10px; letter-spacing: .02em; }
 			.menu-toggle { padding: 8px 10px; margin-left: 8px; }
 			.mobile-menu { right: 14px; left: 14px; min-width: 0; }
 		}
+	`;
+	style.textContent += `
+		.brand-wordmark { display: block; color: #1d3253; font-family: "Space Grotesk", sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -.04em; white-space: nowrap; }
+		.brand-mark { min-width: 150px; }
 	`;
 	document.head.appendChild(style);
 

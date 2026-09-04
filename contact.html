@@ -33,6 +33,11 @@
 		.card { background: var(--sky); border: 1px solid #dfeaf8; border-radius: 20px; padding: 30px 28px; box-shadow: 0 10px 26px rgba(20, 43, 76, 0.05); }
 		.card h2 { margin: 0 0 18px; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); }
 		.card p, .card a { font-size: 1.05rem; line-height: 1.6; color: var(--ink); text-decoration: none; }
+		.card a.action-link { display: inline-flex; margin-top: 18px; color: var(--navy); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+		.card a.action-link::after { content: "→"; margin-left: 8px; color: var(--gold); font-size: 1.2rem; }
+		.contact-note { margin-top: 18px; padding: 22px 24px; background: var(--navy); color: var(--white); }
+		.contact-note h2 { margin: 0 0 8px; font-family: "Space Grotesk", sans-serif; font-size: 1.8rem; }
+		.contact-note p { margin: 0; color: rgba(255,255,255,.82); line-height: 1.7; }
 		.card.accent { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color: var(--white); }
 		.card.accent h2, .card.accent p, .card.accent a { color: var(--white); }
 		footer { display: flex; justify-content: space-between; max-width: 1240px; margin: 0 auto; padding: 24px 32px 36px; color: #647176; font-size: 12px; }
@@ -43,7 +48,7 @@
 	<header class="site-header">
 		<a class="brand" href="index.html" aria-label="Go home">
 			<div class="brand-mark" aria-label="FBLA chapter badge">
-				<img class="brand-logo" src="Assets/IMG_0818.jpeg" alt="MSA FBLA chapter logo">
+				<span class="brand-wordmark">MSA FBLA</span>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" width="60" height="54" style="margin-right: 20px; flex-shrink: 0;" aria-hidden="true">
 					<polygon points="10,80 42,10 32,80" fill="#213555" />
 					<polygon points="41,80 50,28 59,80" fill="#F4C430" />
@@ -68,6 +73,7 @@
 	</header>
 	<main>
 		<section class="page-hero">
+			<div class="tag">Visit and connect</div>
 			<h1>Find us.</h1>
 			<p>Visit our campus, reach out by phone, or connect with the chapter to learn more about our upcoming projects and meetings.</p>
 		</section>
@@ -75,15 +81,22 @@
 			<div class="card">
 				<h2>Campus address</h2>
 				<p>700 Haben Boulevard<br>Palmetto, FL 34221</p>
+				<a class="action-link" href="https://maps.google.com/?q=700+Haben+Boulevard+Palmetto+FL+34221" target="_blank" rel="noopener">Open map</a>
 			</div>
 			<div class="card accent">
 				<h2>Call the school</h2>
 				<p><a href="tel:+19417216800">(941) 721-6800</a></p>
+				<a class="action-link" href="tel:+19417216800">Call now</a>
 			</div>
 			<div class="card">
 				<h2>Hours</h2>
 				<p>8:00 AM – 5:00 PM</p>
+				<a class="action-link" href="mailto:themsafbla@msa.raeschools.org">Email the chapter</a>
 			</div>
+		</section>
+		<section class="contact-note">
+			<h2>Have a question for MSA FBLA?</h2>
+			<p>Reach out before a meeting, event, or sponsorship conversation and we will help you find the right person.</p>
 		</section>
 	</main>
 	<footer>

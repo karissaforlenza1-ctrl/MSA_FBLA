@@ -36,6 +36,11 @@
 		.card .tag { display: inline-block; margin-bottom: 18px; color: var(--navy); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 800; }
 		.card h2 { margin: 0 0 12px; font-size: 1.7rem; }
 		.card p { margin: 0; color: var(--muted); line-height: 1.7; }
+		.event-date { display: inline-flex; margin: 0 0 18px; padding: 8px 11px; background: var(--navy); color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+		.event-details { margin-top: 18px !important; padding-top: 16px; border-top: 1px solid var(--line); }
+		.event-details strong { color: var(--navy); }
+		.event-cta { display: inline-flex; margin-top: 22px; padding: 13px 16px; background: var(--gold); color: var(--navy-deep); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+		.event-cta:hover { background: #ffe7a0; }
 		.card:nth-child(2) { border-top: 5px solid var(--gold); }
 		.card:nth-child(1) { border-top: 5px solid var(--red); }
 		.email-link { color: #111111; font-weight: 700; text-decoration: none; }
@@ -47,7 +52,7 @@
 	<header class="site-header">
 		<a class="brand" href="index.html" aria-label="Go home">
 			<div class="brand-mark" aria-label="FBLA chapter badge">
-				<img class="brand-logo" src="Assets/IMG_0818.jpeg" alt="MSA FBLA chapter logo">
+				<span class="brand-wordmark">MSA FBLA</span>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" width="60" height="54" style="margin-right: 20px; flex-shrink: 0;" aria-hidden="true">
 					<polygon points="10,80 42,10 32,80" fill="#213555" />
 					<polygon points="41,80 50,28 59,80" fill="#F4C430" />
@@ -72,19 +77,24 @@
 	</header>
 	<main>
 		<section class="page-hero">
+			<div class="tag">MSA FBLA calendar</div>
 			<h1>Upcoming events.</h1>
 			<p>Our chapter is active, service-driven, and always looking for ways to lead, serve, and grow together.</p>
 		</section>
 		<section class="grid">
 			<div class="card">
 				<div class="tag">Next event</div>
+				<div class="event-date">September 12, 2026</div>
 				<h2>Suncoast Reef and Beach Cleanup</h2>
-				<p><strong>Date:</strong> 9/12/26<br><strong>Time:</strong> 7:15 AM - 5:00 PM</p>
+				<p class="event-details"><strong>Time:</strong> 7:15 AM - 5:00 PM</p>
+				<a class="event-cta" href="mailto:themsafbla@msa.raeschools.org">Ask about this event</a>
 			</div>
 			<div class="card">
 				<div class="tag">Next service event</div>
+				<div class="event-date">October 11, 2026</div>
 				<h2>Stuff the Bus</h2>
-				<p><strong>Location:</strong> Publix of Palmetto, 1101 8th Ave West<br><strong>Date:</strong> October 11th<br><strong>Time:</strong> All day</p>
+				<p class="event-details"><strong>Location:</strong> Publix of Palmetto, 1101 8th Ave West<br><strong>Time:</strong> All day</p>
+				<a class="event-cta" href="mailto:themsafbla@msa.raeschools.org">Ask about this event</a>
 			</div>
 		</section>
 		<section class="card" style="margin-top: 18px;">
