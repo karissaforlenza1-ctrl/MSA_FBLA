@@ -25,9 +25,12 @@
 		.page-hero { padding: 52px 48px; margin: 20px 0 28px; background: linear-gradient(135deg, var(--navy-deep), var(--navy) 55%, #22466a); color: var(--white); }
 		.page-hero h1 { margin: 0 0 12px; font-family: "Space Grotesk", sans-serif; font-size: clamp(2.8rem, 6vw, 5rem); line-height: 0.94; letter-spacing: -0.06em; }
 		.page-hero p { max-width: 720px; margin: 0; color: rgba(255,255,255,0.84); font-size: 1.08rem; line-height: 1.7; }
-		.gallery-grid { min-height: 360px; background: var(--white); border: 1px solid var(--line); box-shadow: 0 10px 26px rgba(20,43,76,0.04); }
+		.gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; padding: 18px; background: var(--white); border: 1px solid var(--line); box-shadow: 0 10px 26px rgba(20,43,76,0.04); }
+		.gallery-item { overflow: hidden; margin: 0; background: #edf6ff; }
+		.gallery-item img { display: block; width: 100%; height: 360px; object-fit: cover; }
+		.gallery-item figcaption { padding: 14px 16px 16px; color: var(--navy); font-weight: 700; }
 		footer { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 26px 28px 36px; color: #647176; font-size: 12px; }
-		@media (max-width: 860px) { .site-header { padding: 16px 18px; } nav { display: none; } .page-hero { padding: 34px 24px; } .gallery-grid { min-height: 260px; } footer { display: block; padding: 20px 24px 28px; } footer span { display: block; margin-top: 8px; } }
+		@media (max-width: 860px) { .site-header { padding: 16px 18px; } nav { display: none; } .page-hero { padding: 34px 24px; } .gallery-grid { grid-template-columns: 1fr; } .gallery-item img { height: 300px; } footer { display: block; padding: 20px 24px 28px; } footer span { display: block; margin-top: 8px; } }
 	</style>
 </head>
 <body>
@@ -56,7 +59,16 @@
 			<h1>Gallery.</h1>
 			<p></p>
 		</section>
-		<section class="gallery-grid" aria-label="FBLA photo gallery"></section>
+		<section class="gallery-grid" aria-label="FBLA photo gallery">
+			<figure class="gallery-item">
+				<img src="Assets/IMG_0816.jpeg.jpeg" alt="MSA FBLA members gathered together" loading="lazy">
+				<figcaption>Our FBLA team</figcaption>
+			</figure>
+			<figure class="gallery-item">
+				<img src="Assets/club-fair.jpeg.jpeg" alt="MSA FBLA club fair display" loading="lazy">
+				<figcaption>Club fair</figcaption>
+			</figure>
+		</section>
 	</main>
 	<footer><span>Manatee School for the Arts · FBLA</span><span>Palmetto, Florida</span></footer>
 </body>

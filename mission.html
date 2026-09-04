@@ -47,6 +47,7 @@
 		.photo-grid .photo-placeholder:first-child { min-height: 250px; background: var(--navy); color: var(--gold); }
 		.photo-grid .photo-placeholder:first-child + .photo-placeholder { min-height: 220px; }
 		.photo-grid .photo-placeholder span { font-size: 11px; }
+		.photo-grid img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
 		footer { display: flex; justify-content: space-between; max-width: 1240px; margin: 0 auto; padding: 24px 32px 36px; color: #647176; font-size: 12px; }
 		@media (max-width: 700px) { .site-header { padding: 18px 20px; } nav { display: none; } .page-hero, .mission-layout, .photo-grid { grid-template-columns: 1fr; } .page-hero { padding: 30px 22px; } .photo-placeholder, .mission-photo, .photo-grid .photo-placeholder, .photo-grid .photo-placeholder:first-child, .photo-grid .photo-placeholder:first-child + .photo-placeholder { min-height: 190px; } footer { display: block; padding: 20px 24px; } }
 	</style>
@@ -95,8 +96,8 @@
 			<div class="mission-photo" aria-label="Photo placeholder for students or chapter activities"><span>Student leadership photo</span></div>
 		</section>
 		<section class="photo-grid" aria-label="MSA FBLA photo gallery placeholders">
-			<div class="photo-placeholder"><span>Team photo</span></div>
-			<div class="photo-placeholder"><span>Competition photo</span></div>
+			<div class="photo-placeholder"><img src="Assets/IMG_0816.jpeg.jpeg" alt="MSA FBLA members gathered together" loading="lazy"></div>
+			<div class="photo-placeholder"><img src="Assets/club-fair.jpeg.jpeg" alt="MSA FBLA club fair display" loading="lazy"></div>
 			<div class="photo-placeholder"><span>Community photo</span></div>
 		</section>
 	</main>
